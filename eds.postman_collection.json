@@ -1,0 +1,259 @@
+{
+	"info": {
+		"_postman_id": "7880ed9d-fdf8-4dee-8e24-0fe2dcc93064",
+		"name": "eds",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19079520"
+	},
+	"item": [
+		{
+			"name": "token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "edstruments",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "258888d4-9fd5-4000-b26a-f0148ac3bf06",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8181/oauth/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create Product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiZXhwIjoxNzI5NDQxNDYzLCJqdGkiOiJYU1BKQlhHUXR3VTBEVElsZmZjVU9fYzhtUXMiLCJjbGllbnRfaWQiOiJlZHN0cnVtZW50cyJ9.r0p4twYJYaFkeU9Aharz4OjD6BgxOJ5A0QSk27oEECo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"test7\",\n    \"description\":\"test\",\n    \"price\":1.02\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8181/api/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get Product",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiZXhwIjoxNzI5NDQxNDYzLCJqdGkiOiJYU1BKQlhHUXR3VTBEVElsZmZjVU9fYzhtUXMiLCJjbGllbnRfaWQiOiJlZHN0cnVtZW50cyJ9.r0p4twYJYaFkeU9Aharz4OjD6BgxOJ5A0QSk27oEECo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"test2\",\n    \"description\":\"test\",\n    \"price\":\"1.02090\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8181/api/products/57adadb8-dc64-41e7-a820-bfcbc345a2f9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"products",
+						"57adadb8-dc64-41e7-a820-bfcbc345a2f9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get Product list",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiZXhwIjoxNzI5NDQxNDYzLCJqdGkiOiJYU1BKQlhHUXR3VTBEVElsZmZjVU9fYzhtUXMiLCJjbGllbnRfaWQiOiJlZHN0cnVtZW50cyJ9.r0p4twYJYaFkeU9Aharz4OjD6BgxOJ5A0QSk27oEECo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8181/api/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update Product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiZXhwIjoxNzI5NDQwMjY3LCJqdGkiOiJSX0JDMlV6SGFvVzcxbEwweElOektpVDV2aW8iLCJjbGllbnRfaWQiOiJlZHN0cnVtZW50cyJ9.P1g4nmzzfLmv2m_5yGwS3dqtBASCnh7IdGv5sBEIlCw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"test4\",\n    \"description\":\"test\",\n    \"price\":\"1.020\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8181/api/products/57c1db55-1f4b-4568-9f25-0284f95c5ffe",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"products",
+						"57c1db55-1f4b-4568-9f25-0284f95c5ffe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update Product Copy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiZXhwIjoxNzI5NDM2MDk3LCJqdGkiOiI5UDRyWDVkNUc3Rm1hLVVUVHhyT2pEN2FOYm8iLCJjbGllbnRfaWQiOiJlZHN0cnVtZW50cyJ9.EvOZENcvHxm2pc_SJw9JGusE7I0pucRwyG-cfzWcw58",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8181/api/products/6514bf1e-9228-49aa-b04e-18819c0e55bf",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"products",
+						"6514bf1e-9228-49aa-b04e-18819c0e55bf"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
